@@ -1,0 +1,38 @@
+using System;
+using System.Text;
+
+public sealed class App
+{
+    static void Main()
+    {
+        string firstWord = "acb";
+        string secondWord = "cba";
+        string targetWord = "cdb";
+        
+        Console.WriteLine("firstWord {0} : ", GetNumericValue(firstWord));
+        Console.WriteLine("secondWord {0} : ", GetNumericValue(secondWord));
+        Console.WriteLine("targetWord {0} : ", GetNumericValue(targetWord));
+    }
+    
+    private static int GetNumericValue(string word)
+    {
+        StringBuilder bb = new StringBuilder();
+        Console.WriteLine("bb : {0} ", bb);
+        for(int i = 0; i < word.Length; i++)
+        {
+            bb.Append(word[i]);
+            Console.WriteLine("word[{1}] : {0} ", word[i], i);
+            Console.WriteLine("word[{1}] - 'a' : {0} ", word[i] - 'a', i);
+        }
+        Console.WriteLine("bb : {0} ", bb);
+        return int.Parse(bb.ToString());
+    }
+}
+
+### 결과값 ###
+
+char 은 문자를 나타내기도 하지만 본래 숫자로도 사용되던 것이기 때문에 char 끼리 연산을 하면 아스키 코드에 따라서 문자가 숫자로 변경되고 연산되는 것이다.
+
+firstWord = 21
+secondWord = 210
+targetWord = 231
