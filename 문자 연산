@@ -18,12 +18,14 @@ public sealed class App
     {
         StringBuilder bb = new StringBuilder();
         Console.WriteLine("bb : {0} ", bb);
+        
         for(int i = 0; i < word.Length; i++)
         {
             bb.Append(word[i] - 'a');
             Console.WriteLine("word[{1}] : {0} ", word[i], i);
             Console.WriteLine("word[{1}] - 'a' : {0} ", word[i] - 'a', i);
         }
+        
         Console.WriteLine("bb : {0} ", bb);
         return int.Parse(bb.ToString());
     }
