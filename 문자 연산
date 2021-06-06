@@ -33,8 +33,10 @@ public sealed class App
 
 ### 결과값 ###
 
-char 은 문자를 나타내기도 하지만 본래 숫자로도 사용되던 것이기 때문에 char 끼리 연산을 하면 아스키 코드에 따라서 문자가 숫자로 변경되고 연산되는 것이다.
-
 firstWord = 21
 secondWord = 210
 targetWord = 231
+
+
+char 은 문자를 나타내기도 하지만 본래 숫자로도 사용되던 것이기 때문에 char 끼리 연산을 하면 아스키 코드에 따라서 문자가 숫자로 변경되고 연산되는 것이다.
+StringBuilder 는 문자열을 조합하기에 적합하다.
