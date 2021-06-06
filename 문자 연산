@@ -9,12 +9,12 @@ public sealed class App
         string secondWord = "cba";
         string targetWord = "cdb";
         
-        Console.WriteLine("firstWord {0} : ", GetNumericValue(firstWord));
-        Console.WriteLine("secondWord {0} : ", GetNumericValue(secondWord));
-        Console.WriteLine("targetWord {0} : ", GetNumericValue(targetWord));
+        Console.WriteLine("firstWord {0} : ", GetNumValue(firstWord));
+        Console.WriteLine("secondWord {0} : ", GetNumValue(secondWord));
+        Console.WriteLine("targetWord {0} : ", GetNumValue(targetWord));
     }
     
-    private static int GetNumericValue(string word)
+    private static int GetNumValue(string word)
     {
         StringBuilder bb = new StringBuilder();
         Console.WriteLine("bb : {0} ", bb);
