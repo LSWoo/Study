@@ -19,7 +19,7 @@ public class Solution
     }
  }
  
- 또는 
+위와 아래의 연산 속도는 똑같다.
  
  public class Solution 
 {
