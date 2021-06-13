@@ -1,0 +1,24 @@
+문제 "1.1.1.1"; 을 "1 [.] 1 [.] 1 [.] 1" 로 바꿔서 출력되게하기.
+
+using System;
+using System.Text;
+
+public sealed class App
+{
+    static void Main()
+    {
+        string Adress = "1.1.1.1";
+        Adress = DefangIPaddr(Adress);
+    }
+    static string DefangIPaddr(string address) 
+    {
+        return address.Replace(".","[.]");
+    }
+}
+
+### 알게 된 점 ###
+String.Replace(string oldValue, string newValue, bool ignoreCase);
+oldValue : 바꿀 문자열
+newValue : oldValue 를 newValue 로 바꾼다.
+ignoreCase : 대소문자를 무시하려면 true 아니면 false
+
