@@ -1,0 +1,15 @@
+    static public int[] Result(int[] nums, int n)
+    {
+        List<int> result = new List<int>();
+        
+        for(int i = 0; i < n; i++)
+        {
+        result.Add(nums[i]);
+        result.Add(nums[n + i]);
+        }
+        
+        return result.ToArray();
+    }
+    
+    ### 알게 된 점 ###  
+    ToArray를 사용하여 리스트를 배열로 변환할 수 있다.
