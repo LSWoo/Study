@@ -1,0 +1,25 @@
+좌표계는 Local > World > Viewport > Screen 4 가지가 있다.
+
+Local 좌표계는
+	▶ 특정 물체(캐릭터)를 기준으로 한 좌표를 말한다.
+
+Wolrd 좌표계는
+	▶ 월드를 기준으로 한 좌표를 말한다.
+
+Viewport 는
+	▶ 월드를 기준으로 한 좌표를 말한다.
+		▶ Camera.main.ScreenToViewportPoint(Input.mouthPosition); 
+		▶ Viewport 는 Screen 좌표계와는 비슷하지만 왼쪽밑은 0, 0 오른쪽위는 1, 1 이다.
+Screen 좌표계는
+	▶ 스크린 즉 해상도를 기준으로 한 좌표를 말한다. ( 픽셀 좌표 )
+		▶ Input.mouthPosition; 로 스크린 좌표를 표현할수있다.
+		▶ Screen 좌표계는 가로 1600 세로 900 을 기준으로 왼쪽밑은 0, 0 오른쪽 위는 1600, 900 이다.
+World(3D) 좌표가 Screen(2D) 좌표로 변환되는 과정. (투영)
+	▶ 3D 에서 2D 로 변환될때는 Z 좌표가 없어진다.
+	▶ 투영이란 3D 에서 카메라가 비추는 영역중 Near 와 Far 이 있는데 Near 는 카메라와 가까운 ㅁ 박스이고 
+	    Far 는 멀리있는 ㅁ 박스이다 이 두박스를 통해 원근감을 표현하는데 Far 의 값을 줄여 Near 와 점점 가깝게 만들게되면
+	    화면이 2D 와 같이 원근감을 표현할수없게된다. z 좌표가 사라지는 과정 즉 3D 를 2D로 옮기는 과정 이것을 투영이라한다.
+	▶ 투영을 할때 중요한것은 비율을 지킨다는것이다.
+
+
+Vector3.forward 는 Wolrd 좌표계의 z 방향이다.
