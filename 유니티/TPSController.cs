@@ -50,7 +50,9 @@ public class TPSController : MonoBehaviour
         if(isMove)
         {
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
+            // cameraArm .normalized 를 빼고 앞뒤로 움직여서 테스트 해보기
             Vector3 lookRight = new Vector3(cameraArm.right.x, 0f, cameraArm.right.z).normalized;
+            // 
             Vector3 moveDir = lookForward * moveInput.y + lookRight * moveInput.x;
             // lookForward * moveInput.y 를 사용해 수직값을 구하고
             // lookRight * moveInput.x 를 사용해 수평값을 구한다.
