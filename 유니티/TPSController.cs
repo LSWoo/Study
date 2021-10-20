@@ -63,15 +63,15 @@ public class TPSController : MonoBehaviour
 
     private void LookAround()
     {
-        // ÀÌÀü À§Ä¡¿¡ ºñÇØ ¾ó¸¶³ª ¿òÁ÷¿´´ÂÁö ¾Ë¾Æ³»¾ßÇÑ´Ù.
-        // ÇÁ·Î±×·¡¹Ö¿¡¼­´Â ÀÌÀü°ª°ú ÇöÀç°ªÀÇ Â÷ÀÌ¸¦ Delta ¶ó°í Ç¥ÇöÇÑ´Ù.
+        // ì´ì „ ìœ„ì¹˜ì— ë¹„í•´ ì–¼ë§ˆë‚˜ ì›€ì§ì˜€ëŠ”ì§€ ì•Œì•„ë‚¸í›„ ì¹´ë©”ë¼ ê°ë„ì— ë”í•´ì¤€ë‹¤.
+        // í”„ë¡œê·¸ëž˜ë°ì—ì„œëŠ” ì´ì „ê°’ê³¼ í˜„ìž¬ê°’ì˜ ì°¨ì´ë¥¼ Delta ë¼ê³  í‘œí˜„í•œë‹¤.
 
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")); 
-        // ¸¶¿ì½º°¡ ¿òÁ÷ÀÎ ¼öÄ¡´Â Input.GetAxis ÇÔ¼ö¿¡¼­ ¸Å°³º¯¼ö·Î Mouse X ¿Í Mouse Y ¸¦ ³Ö¾î¼­ °¡Á®¿Ã¼öÀÖ´Ù.
+        // ë§ˆìš°ìŠ¤ê°€ ì›€ì§ì¸ ìˆ˜ì¹˜ëŠ” Input.GetAxis í•¨ìˆ˜ì—ì„œ ë§¤ê°œë³€ìˆ˜ë¡œ Mouse X ì™€ Mouse Y ë¥¼ ë„£ì–´ì„œ ê°€ì ¸ì˜¬ìˆ˜ìžˆë‹¤.
         Vector3 camAngle = cameraArm.rotation.eulerAngles; 
-        // eulerAngles ·Î º¯È¯½ÃÅ°´Â ÀÌÀ¯´Â Quaternion °ªÀ» Vector3 ·Î º¯È¯ÇÏ±â À§ÇØ¼­.
+        // eulerAngles ë¡œ ë³€í™˜ì‹œí‚¤ëŠ” ì´ìœ ëŠ” Quaternion ê°’ì„ Vector3 ë¡œ ë³€í™˜í•˜ê¸° ìœ„í•´ì„œ.
         float x = camAngle.x - mouseDelta.y; 
-        // À§, ¾Æ·¡ Ä«¸Þ¶ó ÀÌµ¿ ¹üÀ§¸¦ Á¦ÇÑÇÏ±â À§ÇØ¼­.
+        // ìœ„, ì•„ëž˜ ì¹´ë©”ë¼ ì´ë™ ë²”ìœ„ë¥¼ ì œí•œí•˜ê¸° ìœ„í•´ì„œ.
 
         if (x < 180f)
             x = Mathf.Clamp(x, -1f, 27f);
@@ -79,7 +79,7 @@ public class TPSController : MonoBehaviour
             x = Mathf.Clamp(x, 316f, 361f);
 
         cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x * 3, camAngle.z); 
-        // ¸¶¿ì½º°¡ ¿òÁ÷ÀÎ ¼öÄ¡¿Í Ä«¸Þ¶óÀÇ °¢µµ¸¦ ´õÇÑ ÈÄ ´Ù½Ã Vector3 °ªÀ» Quaternion À¸·Î º¯È¯ÇØ rotation ¿¡ ³Ö¾îÁØ´Ù.
+        // ë§ˆìš°ìŠ¤ê°€ ì›€ì§ì¸ ìˆ˜ì¹˜ì™€ ì¹´ë©”ë¼ì˜ ê°ë„ë¥¼ ë”í•œ í›„ ë‹¤ì‹œ Vector3 ê°’ì„ Quaternion ìœ¼ë¡œ ë³€í™˜í•´ rotation ì— ë„£ì–´ì¤€ë‹¤.
 
     }
 }
