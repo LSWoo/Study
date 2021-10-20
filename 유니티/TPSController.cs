@@ -35,7 +35,7 @@ public class TPSController : MonoBehaviour
         // Horizontal 또는 Vertical 이 눌렸는지 확인한다.
         bool isRun = Input.GetKey(KeyCode.LeftShift);
         bool isMove = moveInput.magnitude != 0;
-         // magnitude 를 사용해 Horizontal 또는 Vertical 이 눌리면 0 보다 크고 1 보다는 작거나 같은 값이 나온다.
+        // magnitude 를 사용해 Horizontal 또는 Vertical 이 눌리면 결과값으로 0 보다 크고 1 보다는 작거나 같은 값이 나오는데 그 값을 이용해 0이 아니라면 isMove 에 true 를 반환해준다.
         animator.SetBool("Walk", isMove);
         if (isRun)
         {
