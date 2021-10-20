@@ -32,8 +32,10 @@ public class TPSController : MonoBehaviour
     private void Move()
     {
         Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        // Horizontal 또는 Vertical 이 눌렸는지 확인한다.
         bool isRun = Input.GetKey(KeyCode.LeftShift);
         bool isMove = moveInput.magnitude != 0;
+         // magnitude 를 사용해 Horizontal 또는 Vertical 이 눌리면 0 보다 크고 1 보다는 작거나 같은 값이 나온다.
         animator.SetBool("Walk", isMove);
         if (isRun)
         {
@@ -50,6 +52,8 @@ public class TPSController : MonoBehaviour
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
             Vector3 lookRight = new Vector3(cameraArm.right.x, 0f, cameraArm.right.z).normalized;
             Vector3 moveDir = lookForward * moveInput.y + lookRight * moveInput.x;
+            // lookForward * moveInput.y 를 사용해 수직값을 구하고
+            // lookRight * moveInput.x 를 사용해 수평값을 구한다.
 
             character.forward = lookForward;
             transform.position += moveDir * Time.deltaTime * moveSpeed;
