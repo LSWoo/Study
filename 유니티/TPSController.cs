@@ -14,8 +14,6 @@ public class TPSController : MonoBehaviour
     float moveSpeed = 0f;
     float walkSpeed = 3f;
     float runSpeed = 5f;
-    bool isWalk = false;
-    bool isRun = false;
 
     Animator animator;
     void Start()
@@ -31,12 +29,17 @@ public class TPSController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 moveFront = new Vector2(0, Input.GetAxis("Vertical"));
+        Vector2 moveRight = new Vector2(Input.GetAxis("Horizontal"), 0);
         // Horizontal 또는 Vertical 이 눌렸는지 확인한다.
-        bool isRun = Input.GetKey(KeyCode.LeftShift);
-        bool isMove = moveInput.magnitude != 0;
-        // magnitude 를 사용해 Horizontal 또는 Vertical 이 눌리면 결과값으로 0 보다 크고 1 보다는 작거나 같은 값이 나오는데 그 값을 이용해 0이 아니라면 isMove 에 true 를 반환해준다.
-        animator.SetBool("Walk", isMove);
+        // Horizontal 또는 Vertical 이 눌리면 0 ~ 1 까지의 값이 나온다.
+        bool isRun =  moveFront.magnitude != 0 && Input.GetKey(KeyCode.LeftShift);
+        bool isMove = moveFront.magnitude != 0;
+        // magnitude 를 사용해 moveFront 의 길이를 반환한다. 아무것도 누르지않은 상태에서는 Input.GetAxis("Vertical") 이 0을 반환하기때문에 길이는 0 * 0 + 0 * 0  = 0 이라 false 값이 isMove 에 들어가게된다.
+        bool isMoveRight = moveFront.magnitude == 0 && moveRight.magnitude != 0;
+
+            animator.SetBool("Walk", isMove);
+            animator.SetBool("WalkRight", isMoveRight);
         if (isRun)
         {
             animator.SetBool("Run", isRun);
@@ -47,24 +50,15 @@ public class TPSController : MonoBehaviour
             animator.SetBool("Run", isRun);
             moveSpeed = walkSpeed;
         }
-        if(isMove)
+        if(isMove || isMoveRight)
         {
             Vector3 lookForward = new Vector3(cameraArm.forward.x, 0f, cameraArm.forward.z).normalized;
-            // cameraArm .normalized 를 빼고 앞뒤로 움직여서 테스트 해보기
             Vector3 lookRight = new Vector3(cameraArm.right.x, 0f, cameraArm.right.z).normalized;
-            // 
-            Vector3 moveDir = lookForward * moveInput.y + lookRight * moveInput.x;
-            // lookForward * moveInput.y 를 사용해 수직값을 구하고
-            // lookRight * moveInput.x 를 사용해 수평값을 구한다.
+            Vector3 moveDir = lookForward * moveFront.y + lookRight * moveRight.x;
 
             character.forward = lookForward;
             transform.position += moveDir * Time.deltaTime * moveSpeed;
-
         }
-        Debug.Log($"cameraArm.forward.x : {cameraArm.forward.x}");
-
-
-
     }
 
     private void LookAround()
@@ -84,7 +78,7 @@ public class TPSController : MonoBehaviour
         else
             x = Mathf.Clamp(x, 316f, 361f);
 
-        cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x * 3, camAngle.z); 
+        cameraArm.rotation = Quaternion.Euler(x, camAngle.y + mouseDelta.x * cameraHorizontalSpeed, camAngle.z); 
         // 마우스가 움직인 수치와 카메라의 각도를 더한 후 다시 Vector3 값을 Quaternion 으로 변환해 rotation 에 넣어준다.
 
     }
