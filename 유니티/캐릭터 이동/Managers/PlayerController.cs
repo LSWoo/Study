@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
-        Managers.Input.KeyAction -= KeyActionCheck; // È¤½Ã¶óµµ ´Ù¸¥°÷¿¡¼­ ÀÌ¹Ì È£ÃâÀ» ÇØ¼­ µÎ¹ø È£ÃâµÇ´Â °æ¿ì¸¦ ¹æÁöÇÏ±âÀ§ÇØ¼­.
+        Managers.Input.KeyAction -= KeyActionCheck; // í˜¹ì‹œë¼ë„ ë‹¤ë¥¸ê³³ì—ì„œ ì´ë¯¸ í˜¸ì¶œì„ í•´ì„œ ë‘ë²ˆ í˜¸ì¶œë˜ëŠ” ê²½ìš°ë¥¼ ë°©ì§€í•˜ê¸°ìœ„í•´ì„œ.
         Managers.Input.KeyAction += KeyActionCheck;
         Managers.Input.Keyfalse -= AnyKeyFalse;
         Managers.Input.Keyfalse += AnyKeyFalse;
