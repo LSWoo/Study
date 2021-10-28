@@ -1,0 +1,173 @@
+**자료형**
+정수 저장 타입 :
+byte(1byte, 0~255)
+short(2byte, -3만 ~ 3만)
+int(4byte, -21억 ~ 21억) 
+long(8byte, 21억이후)
+정수 저장 변형타입 : 
+sbyte(1byte, -128~127)
+ushort(2byte, 0~6만)
+uint(4byte, 0~43억)
+ulong(8byte, 42억이후)
+2진수
+10진수
+16진수
+float(4byte)
+double(8byte)
+char(2byte, 한 글자,숫자만가능)
+string
+bool(1byte, 비트보다 바이트가 연산이 빨라서)
+Const int : Const 는 변수를 상수로 만들어줌
+Enum(열거형) name
+{
+Rock = 1, ( 값을 지정하지않으면 0부터시작)
+Paper
+}
+오버플로우:형변환시(캐스팅) 범위를 초과해 값이 이상하게 나온경우
+언더플로우:형변환시(캐스팅) 값이 범위보다 미달되 이상하게 나온경우
+[  ] Static
+Class > 인스턴스 
+인스턴스는 상위인 Class에 접근할수없다.
+static : 원래 Monster각각의 count를 가지지만 
+static을 붙이게되면 모든 Monster가 
+count의 값을 공유함 Class에 종속되기때문
+붙이지않으면 각각의 인스턴스에 종속되기때문에Monster1의 count는 1
+Monster2의 count도 1이된다
+Class Monster
+{
+  static public int count = 1;
+  public int id;
+  public int hp; 
+
+    Monster()
+    {
+      id = count;
+      count++;
+       hp = 100;
+     }
+}
+Monster monster1 = new Monster(); 
+
+객체지향 3대요소
+static void EnterGame(Player player)
+{
+bool isMager = player is Mage;
+player 가 Mage 인가
+}
+static void EnterGame(Player player)
+{
+Mage mage = player as Mage;
+player가 Mage 라면 Mage 타입으로 형변환
+}
+[  ] 상속성
+Class Player
+{
+}
+Class Knight : Player
+{
+} 
+
+추상함수 : abstract 
+(부모 클래스에서 추상적으로 구현해줌으로써 자식 클래스에서 override(재정의)를 사용해 구현하지않으면 오류가 떠 까먹지않고 구현할수있다)
+
+
+[  ] 은닉성
+public
+protected
+private
+[  ] 다형성
+virtual (가상함수)
+override(오버라이딩 : 재정의)
+sealed 이선언된곳까지만 오버라이딩하고 그밑으로 상속받는곳은 사용할수없다
+함수 이름이 같아야한다.
+상속을 받아야한다.
+인자에따라서 다양한 속성을 사용하고싶을때
+
+
+
+[  ] 데이터연산
++,_,*,/ 곱셈 나눗셈 먼저 연산
+증가연산자 : ++
+감소연산자 : -- 
+
+[  ] 논리연산자
+&& : And 
+|| : or 
+! : Not
+[  ] 비트연산
+num = 8
+<< : 왼쪽 시프트연산 num = num << 2
+(0001에서 0100으로)
+>> : 오른쪽 시프트 연산 num = num >> 2
+(0100에서 0001로)
+&(and) : 
+(A 와 B 숫자중 둘다 1인경우에만1 나머지는 0)
+A = 01010110 
+B = 00110010
+R = 00010010
+||(or) : 둘중 하나라도 1이라면
+A = 01010100
+B = 00011011
+R = 01011111
+^(xor) : 두값이 다르면 1 같으면 0
+A = 11011011
+B = 11010101
+R = 00001110
+~(not) : 1이면 0으로 0이면 1로
+A = 01011101
+R = 10100010 
+
+[  ] 삼항연산자
+조건 ? 맞을때 : 틀릴때
+
+
+[  ] break, continue 복습필요
+break : 이 실행되면 for, while, swich 문을 빠져나간다 if문안에 break가 있으면 그앞에 for while swich를 빠져나감.
+continue : 만약 for문안에서 continue 를 만나면 그밑을 생략하고 for문으로 다시 돌아간다 
+
+[  ] ref, out
+ref : 값을 참조한다(진퉁)
+out : ref 와 마찬가지로 값을 참조한다.(진퉁) 
+         차이점은 값은 넣어주지않으면 에러가뜬다.
+         (다수의 변수를 작업할때 좋음)
+[  ] 오버로딩
+함수 이름의 재사용
+함수이름은 같지만 인자만 다를때
+public void Test()
+{
+}
+public void Test(int a)
+{
+}
+[  ] Stack, Heap
+Stack : 상당히 불안정하고 임시적으로 사용하는 메모리
+Heap : 
+[  ] 문자열 부록
+string name = "name kick"; 
+
+[찾기]
+bool found = name.Contains("kick"); 
+name안에 kick가있는지
+int index = name.IndexOf('i');
+몇번째인덱스인지 index 값은 7 이다.
+[변형]
+name += " is NickName"
+결과는 kick is NickName 이다.
+string isLower = name.ToLower
+전부 소문자로 바꾼다 kick is nickname
+string isUpper = name.ToUpper
+전부 대문자로 바꾼다 KICK IS NICKNAME
+strind NewName = name.Repalce('a','e');
+a를 e로 바꾼다.
+string[] names = name.Split(new char[] {' '});
+띄어쓰기 단위로 나눈다. names[0]은 Kick
+string Subname = name.Substring(5);
+Subname 은  is NickName이 된다. 
+
+[  ] 각각의 장단점
+[  ] List 
+장점 :
+단점 : 100만개가 있을경우 특정한오브젝트를 찾기 힘들다
+[  ] Dictionary
+
+
