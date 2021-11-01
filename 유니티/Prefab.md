@@ -24,6 +24,7 @@ Class CreateManager
 그리고 각각의 인스턴스마다 Speed 를 조절하고싶다면 유니티에선 각 프리팹의 스크립트의 값을 수정할수있고
 
 스크립트에서는
+```c#
 Class Tank
 {
  speed = 10;
@@ -40,4 +41,5 @@ Class CreateManager
 	  Tank tank4 = New Tank();
 	}
 }
+```
 이런식으로 수정할수있다.
