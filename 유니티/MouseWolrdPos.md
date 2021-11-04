@@ -26,7 +26,7 @@ public class TestRaycasting : MonoBehaviour
     }
 }
 ```
-###[ 1. 마우스 좌표(2d)의 World 좌표(3d) 를 구하는 과정 ]
+### [ 1. 마우스 좌표(2d)의 World 좌표(3d) 를 구하는 과정 ]
 ```c#
 Vector3 mousepos3d = Camera.main.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, Camera.main.nearClipPlane));
 ```
