@@ -39,6 +39,6 @@ Screen 좌표는 Z값이 0이기때문에 0(Input.mousePosition.z)을 넣게되�
    Vector3 dir = mousePos - Camera.main.transform.position;
    dir = dir.normalized;
 ```
-거리를 구하는 공식은 방향(dir) = 가야할곳(mousePos) - 현재위치(Camera.main.transform.position) 이기때문이다.
-dir 을 normalized(정규화) 해주는 이유는 normalized 를 하게되면 크기가 1로 통일되기때문이다.
-만약 크기가 1이아닌 각기 다른 크기를 가지게된다면 직선은 1의 속도로 이동하지만 대각선은 1.4의 속도로 이동하는것처럼 각자 다른 속도로 이동하기때문이다.
+거리를 구하는 공식은 방향(dir) = 가야할곳(mousePos) - 현재위치(Camera.main.transform.position) 이기때문이다.  
+dir 을 normalized(정규화) 해주는 이유는 normalized 를 하게되면 크기가 1로 통일되기때문이다.  
+만약 크기가 1이아닌 각기 다른 크기를 가지게된다면 직선은 1의 속도로 이동하지만 대각선은 1.4의 속도로 이동하는것처럼 각자 다른 속도로 이동하기때문이다.  
