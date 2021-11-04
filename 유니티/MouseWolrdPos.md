@@ -28,7 +28,7 @@ public class TestRaycasting : MonoBehaviour
 ```
 ### [ 1. 마우스 좌표(2d)의 World 좌표(3d) 를 구하는 과정 ]
 ```c#
-            Vector3 mousepos3d = Camera.main.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, Camera.main.nearClipPlane));
+   Vector3 mousepos3d = Camera.main.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, Camera.main.nearClipPlane));
 ```
 **Z좌표에 Input.mousePosition.z 를 넣지않고 Camera.main.nearClipPlane (카메라에 near값)을 넣어주는 이유**  
 Screen 좌표는 Z값이 0이기때문에 0(Input.mousePosition.z)을 넣게되면 무조건 카메라의 위치를 반환하기때문이다.  
@@ -36,6 +36,9 @@ Screen 좌표는 Z값이 0이기때문에 0(Input.mousePosition.z)을 넣게되�
 깊이를 구하는 이유는 2D에서 3D로 변환할때 깊이인 z값이 0이면 어떤 물체를 가르키는지 정확하게 알수가없기때문이다.  
 ### [ 2. 마우스가 가르키는 방향을 구하는 과정 ]
 ```c#
-            Vector3 dir = mousepos - Camera.main.transform.position;
-            dir = dir.normalized;
+   Vector3 dir = mousePos - Camera.main.transform.position;
+   dir = dir.normalized;
 ```
+거리를 구하는 공식은 방향(dir) = 가야할곳(mousePos) - 현재위치(Camera.main.transform.position) 이기때문이다.
+dir 을 normalized(정규화) 해주는 이유는 normalized 를 하게되면 크기가 1로 통일되기때문이다.
+만약 크기가 1이아닌 각기 다른 크기를 가지게된다면 직선은 1의 속도로 이동하지만 대각선은 1.4의 속도로 이동하는것처럼 각자 다른 속도로 이동하기때문이다.
