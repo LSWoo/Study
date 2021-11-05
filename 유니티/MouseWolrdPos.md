@@ -86,7 +86,7 @@ public class TestRaycasting : MonoBehaviour
 
             RaycastHit hit;
             LayerMask mask = LayerMask.GetMask("Monster");
-            
+            // int mask = (1 << 8); 비트연산을 사용하여 LayerMask 를 사용할수도있다.
             if (Physics.Raycast(ray, out hit, 100f, mask))
             {
                 Debug.Log(hit.collider.gameObject.name);
