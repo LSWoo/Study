@@ -68,3 +68,30 @@ public class TestRaycasting : MonoBehaviour
     }
 }
 ```
+### [ 4. LayerMask를 사용하여 필요한 오브젝트만 구분하기 ]
+```c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestRaycasting : MonoBehaviour
+{
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            Debug.DrawRay(Camera.main.transform.position, ray.direction, Color.red, 1.0f);
+
+            RaycastHit hit;
+            LayerMask mask = LayerMask.GetMask("Monster");
+            
+            if (Physics.Raycast(ray, out hit, 100f, mask))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+            }
+        }
+    }
+}
+```
