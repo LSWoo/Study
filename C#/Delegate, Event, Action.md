@@ -1,20 +1,49 @@
 ## Delegate
 ```c#
 delegate void KeyAction;
+
+void Start()
+{
+ KeyAction += Move;
+}
+void Move()
+{
+// 이동
+}
 ```
+
 ## Event
 ```c#
 delegate void KeyAction;
+
+void Start()
+{
+ KeyAction += Move;
+}
+void Move()
+{
+// 이동
+}
 ```
+
 ## Action
 ```c#
 Action KeyAction;
+
+void Start()
+{
+ KeyAction += Move;
+}
+void Move()
+{
+// 이동
+}
 ```
+
 ## Func
 ```c#
 Func KeyAction;
-```
-```c#
+
 void Start()
 {
  KeyAction += Move;
