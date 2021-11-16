@@ -3,7 +3,7 @@
 
 Animator animator;
 
-Public Void Start()
+Public void Start()
 {
   animator = Player.GetComponent<Animator>();
 }
