@@ -1,4 +1,6 @@
 # State Pattern
+- State Pattern 이란 :
+
 ```C#
 
 Animator animator;
