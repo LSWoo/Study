@@ -5,7 +5,6 @@
 - Blending 이란 : A 와 B 애니메이션을 부드럽게 연결해주는것.
 
 ## State Pattern
-- State 는 동시에 두가지의 상태를 가질수없다.
-- State Pattern 이란 : 
+- State 는 동시에 두가지의 상태를 가질수없다. 
 
 **Blend 와 State 의 차이점**
