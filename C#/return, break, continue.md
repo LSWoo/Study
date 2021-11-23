@@ -8,6 +8,8 @@ for(int i = 0; i < Count; i++)
 {
   if(i == 12)
     return;
+   
+   Console.WriteLine("i");
 }
 ```
 
@@ -17,6 +19,8 @@ for(int i = 0; i < Count; i++)
 {
   if(i == 12)
     break;
+    
+  Console.WriteLine("i");
 }
 ```
 # continue  
@@ -25,5 +29,7 @@ for(int i = 0; i < Count; i++)
 {
   if(i == 12)
     continue;
+    
+  Console.WriteLine("i");
 }
 ```
