@@ -26,7 +26,7 @@ for(int i = 0; i < Count; i++)
 }
 ```
 # continue  
-continue 의 결과는 이다.
+continue 의 결과는 12를 제외한 나머지 숫자들은 모두 로그가 찍힌다.
 ```c#
 for(int i = 0; i < Count; i++)
 {
