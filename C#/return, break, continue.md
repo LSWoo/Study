@@ -1,6 +1,6 @@
 
 # return
-return 은 x 가 0 ~ 11번째 루프까지 돌고 12번째에서 함수를 완전히 빠져나온다.
+- return 은 x 가 0 ~ 11번째 루프까지 돌고 12번째에서 함수를 완전히 빠져나온다.
 ```c#
 void Test()
 { 
@@ -22,7 +22,7 @@ void Test()
 ```
 
 # break  
-break의 결과는 x 가 0 ~ 5 번째 루프까지 돌고 break 가 있는 for문을 빠져나온 후 다시 i 번째 for문을 돈다.
+- break의 결과는 x 가 0 ~ 5 번째 루프까지 돌고 break 가 있는 for문을 빠져나온 후 다시 i 번째 for문을 돈다.
 ```c#
 void Test()
 { 
@@ -42,13 +42,24 @@ void Test()
 }
 ```
 # continue  
-continue 의 결과는 12를 제외한 나머지 숫자들은 모두 로그가 찍힌다.
+- continue 의 결과는 x 가 5인 루프를 제외한 나머지 루프들은 모두 정상적으로 실행된다.
+- x 가 5인 루프는 break 를 만나기전까지 정상적으로 실행된다.
 ```c#
-for(int i = 0; i < Count; i++)
-{
-  if(i == 12)
-    continue;
-    
-  Console.WriteLine("i");
-}
+    void Test()
+    { 
+        int Count = 10;
+
+        for (int i = 0; i < Count; i++)
+        {
+            for (int x = 0; x < Count; x++)
+            {
+                Debug.Log($"x 값 {x}");
+                if (x == 5)
+                    continue;
+
+                Debug.Log($"x 값 {x}");
+            }
+            Debug.Log($"i 값 {i}");
+        }
+    }
 ```
