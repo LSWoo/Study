@@ -1,4 +1,7 @@
 ## Delegate
+- Delegate 선언 : delegate 리턴타입 델리게이트명(파라미터타입 변수);
+  ex) delegate void TestDelegate(int Num);
+  
 ```c#
 delegate void KeyAction;
 
