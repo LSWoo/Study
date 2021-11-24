@@ -48,10 +48,12 @@ void Move()
 ```c#
 Func<int, string> FuncTest = Move;
 
-void Move(int Num)
+string Move(int Num)
 {
   return $"Num 은 : {Num} 입니다.";
 }
+
+Console.WriteLine(FuncTest(10));
 ```
 **Action 과 Func 의 차이점**
 - Action 은 반환값이 없지만 Func 는 반환값이 있어야한다.
