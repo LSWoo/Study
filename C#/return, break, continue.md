@@ -1,16 +1,18 @@
-```c#
-int Count = 100;
-```
 
 # return
-return 의 결과는 이다.
+return 은 0 ~ 11번째 루프까지 돌고 12번째에서 빠져나온다.
 ```c#
-for(int i = 0; i < Count; i++)
-{
-  if(i == 12)
-    return;
+void Test()
+{ 
+  int Count = 10;
+
+  for(int i = 0; i < Count; i++)
+  {
+    if(i == 12)
+      return;
    
-  Console.WriteLine("i");
+    Console.WriteLine("i");
+  }
 }
 ```
 
