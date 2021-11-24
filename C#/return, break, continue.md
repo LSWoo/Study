@@ -10,9 +10,10 @@ void Test()
   {
     if(i == 12)
       return;
-   
+-------- return 후에는 실행되지않음 --------   
     Console.WriteLine("i");
   }
+ Console.WriteLine("return Test");
 }
 ```
 
