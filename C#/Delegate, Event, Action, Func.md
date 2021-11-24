@@ -44,16 +44,13 @@ void Move()
 ```
 
 ## Func
+- Func 의 선언 : Func<매개변수 타입, 반환 타입> Func이름 = 참조함수; 
 ```c#
-Func KeyAction;
+Func<int, string> FuncTest = Move;
 
-void Start()
+void Move(int Num)
 {
- KeyAction += Move;
-}
-void Move()
-{
-// 이동
+  return $"Num 은 : {Num} 입니다.";
 }
 ```
 **Action 과 Func 의 차이점**
