@@ -8,9 +8,13 @@ void Test()
 
   for(int i = 0; i < Count; i++)
   {
-    if(i == 12)
-      return;
--------- return 후에는 실행되지않음 --------   
+    for(int x = 0; x < Count; x++)
+    {
+        if(x == 12)
+           return;
+ -------- return 후에는 실행되지않음 --------   
+        Console.WriteLine("x");
+    }
     Console.WriteLine("i");
   }
  Console.WriteLine("return Test");
