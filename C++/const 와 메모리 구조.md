@@ -10,6 +10,7 @@ int a = 2;
 int b;
 // .rodata
 const char* msg = "HelloWorld";
+
 [스택 영역]
 int main()
 {
