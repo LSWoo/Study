@@ -6,8 +6,10 @@
 [데이터 영역]
 // .data
 int a = 2;
+
 // .bss
 int b;
+
 // .rodata
 const char* msg = "HelloWorld";
 
