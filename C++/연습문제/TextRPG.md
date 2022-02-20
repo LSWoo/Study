@@ -27,7 +27,8 @@ struct StatInfo
 void EnterLobby();
 void PrintMessage(const char* msg);
 void CreatePlayer(StatInfo* playerInfo);
-void PrintStatInfo(const char* name, const StatInfo& info); // 복사를 사용하지않고 참조를 사용한 이유는 크기가 커짐에 따라 참조를 사용해 얻는 성능상의 이득이 크기떄문에. const 를 붙인 이유는 읽기만 할뿐 수정하지않을것이디때문이다.
+void PrintStatInfo(const char* name, const StatInfo& info); 
+// 복사를 사용하지않고 참조를 사용한 이유는 크기가 커짐에 따라 참조를 사용해 얻는 성능상의 이득이 크기떄문에. const 를 붙인 이유는 읽기만 할뿐 수정하지않을것이디때문이다.
 void EnterGame(StatInfo* playerInfo);
 void CreateMonsters(StatInfo monsterInfo[], int Count);
 bool EnterBattle(StatInfo* playerInfo, StatInfo* monsterInfo);
@@ -120,7 +121,8 @@ void EnterGame(StatInfo* playerInfo)
 	while (true)
 	{
 		StatInfo monsterInfo[MONSTER_COUNT];
-		CreateMonsters(monsterInfo, MONSTER_COUNT); // 배열의 이름은 배열의 시작 주소이기때문에 &monsterInfo 를 넘기지 않고 monsterInfo 를 넘겨준다.
+		CreateMonsters(monsterInfo, MONSTER_COUNT); 
+		// 배열의 이름은 배열의 시작 주소이기때문에 &monsterInfo 를 넘기지 않고 monsterInfo 를 넘겨준다.
 
 		cout << "[1] 전투  [2] 전투  [3] 도망" << endl;
 
@@ -181,7 +183,8 @@ bool EnterBattle(StatInfo* playerInfo, StatInfo* monsterInfo)
 		if (monsterInfo->HP < 0)
 			monsterInfo->HP = 0;
 
-		PrintStatInfo("Monster", *monsterInfo); // StatInfo 를 받아줘야하는데 우리가 받아온건 monsterInfo[] 포인터이니까 해당 주소값으로 이동한다.
+		PrintStatInfo("Monster", *monsterInfo); 
+		// StatInfo 를 받아줘야하는데 받아온건 monsterInfo[] 포인터이니까 해당 주소값으로 이동한다.
 		
 		if (monsterInfo->HP == 0)
 		{
@@ -197,7 +200,8 @@ bool EnterBattle(StatInfo* playerInfo, StatInfo* monsterInfo)
 		if (playerInfo->HP < 0)
 			playerInfo->HP = 0;
 
-		PrintStatInfo("Player", *playerInfo); // 넘겨줄때 &playerInfo 를 넘겨줬기 때문에 참조로 넘길땐 &가 아닌 playerInfo 를 넘겨줘야 하기 때문에 *playerInfo 해당 주소로 이동한다.
+		PrintStatInfo("Player", *playerInfo); 
+		// 넘겨줄때 &playerInfo 를 넘겨줬기 때문에 참조로 넘길땐 &가 아닌 playerInfo 를 넘겨줘야 하기 때문에 *playerInfo 해당 주소로 이동한다.
 
 		if (playerInfo->HP == 0)
 		{
