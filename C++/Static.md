@@ -5,7 +5,7 @@ Static 변수는 Class 에서 실체화 하는 변수이다.
 Static 변수는 Class 에서 실체화 하기 때문에 오브젝트에서 실체화 되지 않는다.
 ```
 ```C++
-public class Test()
+public class Test
 {
   int Main()
   {
@@ -20,7 +20,7 @@ public class Test()
   }
 }
 
-public class Dog()
+public class Dog
 {
   public string Name;
   public string Sound;
