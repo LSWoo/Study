@@ -17,6 +17,8 @@ public class Test
     // Jack, Pack, Kack 각각 Name, Age, Weight, Sound 변수를 가지고있고 메모리에는 총 Name 3개 Age 3개 Weight 3개 Sound 3개가 올라가게된다.
     Console.WriteLine(Jack.Name);
     Console.WriteLine(Pakc.Name);
+    // Static 변수이기 때문에 Dog Class 가 가지고있다.
+    Console.WriteLine(Dog.Count);
   }
 }
 
