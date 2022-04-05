@@ -2,5 +2,4 @@
 - Assembly
 - C++
 - C#
-- Lua
 - Unity
