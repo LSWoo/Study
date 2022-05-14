@@ -13,7 +13,7 @@ public class Managers : MonoBehaviour
 
     private void Update()
     {
-        _input.OnUpdate(); // PlayerController ¿¡¼­ ¸¶¿ì½º³ª Å°º¸µå¸¦ Ã¼Å©ÇÏ´ø Update ¹®À» _input.OnUpdate °¡ ´ëÇ¥·Î Ã¼Å©ÇØÁÖ°ÔµÇ¹Ç·Î ¼º´É»ó ÀÌµæÀÌ ÀÖ´Ù.
+        _input.OnUpdate(); // PlayerController ì—ì„œ ë§ˆìš°ìŠ¤ë‚˜ í‚¤ë³´ë“œë¥¼ ì²´í¬í•˜ë˜ Update ë¬¸ì„ _input.OnUpdate ê°€ ëŒ€í‘œë¡œ ì²´í¬í•´ì£¼ê²Œë˜ë¯€ë¡œ ì„±ëŠ¥ìƒ ì´ë“ì´ ìˆë‹¤.
     }
 
     static void Init()
