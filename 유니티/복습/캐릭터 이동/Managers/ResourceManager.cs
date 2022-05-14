@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    // »ç¿ë ÀÌÀ¯ : ÇÁ·ÎÁ§Æ® ±Ô¸ğ°¡ Ä¿Áú¼ö·Ï Åø·Î ÇÑ°³¾¿ ¿¬°áÇØÁÖ±â¿¡´Â ¹«¸®°¡ ÀÖ±â¶§¹®ÀÌ´Ù.
-    // °æ·Î´Â Asset Æú´õ »êÇÏÀÇ Resources Æú´õ¸¦ ±âÁØÀ¸·Î ÇÑ´Ù.
+    // ì‚¬ìš© ì´ìœ  : í”„ë¡œì íŠ¸ ê·œëª¨ê°€ ì»¤ì§ˆìˆ˜ë¡ íˆ´ë¡œ í•œê°œì”© ì—°ê²°í•´ì£¼ê¸°ì—ëŠ” ë¬´ë¦¬ê°€ ìˆê¸°ë•Œë¬¸ì´ë‹¤.
+    // ê²½ë¡œëŠ” Asset í´ë” ì‚°í•˜ì˜ Resources í´ë”ë¥¼ ê¸°ì¤€ìœ¼ë¡œ í•œë‹¤.
 
     public T Load<T>(string path) where T : Object
     {
         return Resources.Load<T>(path);
-        // ·¦ÇÎÀ» ÇÑ ÀÌÀ¯ : È¤½Ã¶óµµ ·Îµå¸¦ ÇÏ°ÔµÇ¸é Manager ¸¦ ÅëÇØ Á¢±ÙÀ» ÇÏ°ÔµÇ¼­ ¾Ë¼öÀÖ±â¶§¹®¿¡.
+        // ë©í•‘ì„ í•œ ì´ìœ  : í˜¹ì‹œë¼ë„ ë¡œë“œë¥¼ í•˜ê²Œë˜ë©´ Manager ë¥¼ í†µí•´ ì ‘ê·¼ì„ í•˜ê²Œë˜ì„œ ì•Œìˆ˜ìˆê¸°ë•Œë¬¸ì—.
     }
 
     public GameObject Instantiate(string path, Transform parent = null)
