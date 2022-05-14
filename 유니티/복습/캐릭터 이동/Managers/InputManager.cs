@@ -9,10 +9,10 @@ public class InputManager
     public Action Keyfalse = null;
 
 
-    // ÀÔ·ÂÀ» Ã¼Å©ÇÑ ´ÙÀ½¿¡ ÀÔ·ÂÀÌ ÀÖ¾ú´Ù¸é ÀÌº¥Æ®·Î ÀüÆÄ¸¦ ÇØÁÖ´Â ¸®½º³Ê ÆĞÅÏ
+    // ì…ë ¥ì„ ì²´í¬í•œ ë‹¤ìŒì— ì…ë ¥ì´ ìˆì—ˆë‹¤ë©´ ì´ë²¤íŠ¸ë¡œ ì „íŒŒë¥¼ í•´ì£¼ëŠ” ë¦¬ìŠ¤ë„ˆ íŒ¨í„´
     public void OnUpdate()
     {
-        if (Input.anyKey == false) // »ç¿ëÀÚ°¡ ¾î¶²Å°¸¦ ÀÔ·ÂÀ» Çß´ÂÁö È®ÀÎ.
+        if (Input.anyKey == false) // ì‚¬ìš©ìê°€ ì–´ë–¤í‚¤ë¥¼ ì…ë ¥ì„ í–ˆëŠ”ì§€ í™•ì¸.
         {
             if (Keyfalse != null)
                 Keyfalse.Invoke();
