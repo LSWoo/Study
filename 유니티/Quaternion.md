@@ -21,7 +21,7 @@ Quaternion.Euler(0.0f, Time.deltaTime \* turnspeed, 0.0f) 를 사용하지 않�
 Quaternion.Euler(0.0f, a, 0.0f) 를 사용한 이유는  
 직접적으로 연산을 하게되면 360도가 넘어가면 계산에 실패하는 경우가 생기기 때문에 절대값을 넣어주었다.
 
-```
+```c#
     public float turnspeed = 90f;
     flaot a = 0;
 
@@ -38,7 +38,7 @@ Quaternion.LookRotation 함수는 매개변수로 Vector3 를 받고 Vector3 방
 
 아래 코드들을 사용하여 간단한 캐릭터 회전을 구현해 보았다.
 
-```
+```c#
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -76,7 +76,7 @@ t값에 1을 넣게 되면 Quaternion.LookRotation(Vector3.left)를 사용한 �
 
 t값에 0.5를 넣은 경우 Quaternion.LookRotation(Vector3.left)를 사용한것 보다 조금 더 부드러운 회전을 보여준다.
 
-```
+```c#
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
