@@ -89,3 +89,5 @@ t값에 0.5를 넣은 경우 Quaternion.LookRotation(Vector3.left)를 사용한�
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.right), 1f);
     }
 ```
+
+
